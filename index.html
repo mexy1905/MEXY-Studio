@@ -1063,12 +1063,14 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: minmax(0, 1fr);
             gap: 24px;
         }
 
         .project-card {
             position: relative;
+            width: min(100%, 760px);
+            margin-inline: auto;
             display: flex;
             flex-direction: column;
             min-height: 460px;
@@ -2877,7 +2879,7 @@
         */
 
         const CONFIG = {
-            discord: "https://discord.gg/SENIN-DISCORD-LINKIN",
+            discord: "https://discord.gg/WpRNV88d8b",
             github: "https://github.com/SENIN-GITHUB-HESABIN",
             contact: "mailto:example@example.com",
 
@@ -3321,7 +3323,7 @@
         ============================================================
         */
 
-        function getAllDeğişiklik Günlüğüs() {
+        function getAllChangelogs() {
             const changelogs = [];
 
             PROJECTS.forEach((project) => {
@@ -3338,8 +3340,8 @@
             return changelogs;
         }
 
-        function renderDeğişiklik Günlüğü() {
-            const changelogs = getAllDeğişiklik Günlüğüs();
+        function renderChangelog() {
+            const changelogs = getAllChangelogs();
 
             if (changelogs.length === 0) {
                 changelogList.innerHTML = `
@@ -3917,7 +3919,7 @@
             setConfigLinks();
             renderProjects();
             renderTimeline();
-            renderDeğişiklik Günlüğü();
+            renderChangelog();
 
             createAudioVisualizer();
             initializeMouseGlow();
